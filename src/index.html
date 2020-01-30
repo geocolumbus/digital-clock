@@ -1,53 +1,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <style>
-        .letter {
-            border: 1px solid lightgray;
-            width: 50px;
-            height: 80px;
-            position: relative;
-        }
-
-        .pixel {
-            position: absolute;
-            width: 6px;
-            height: 6px;
-        }
-    </style>
 </head>
 <body>
-<div class="letter"></div>
-<script>
-    const font = [[
-        "  111 ",
-        " 1   1",
-        " 1   1",
-        " 1   1",
-        " 11111",
-        " 1   1",
-        " 1   1",
-        "      "
-    ]];
-
-    displayFont = function(asciiCode) {
-        const letter = document.getElementsByClassName("letter")[0];
-        for (let i = 0; i < 5; i++) {
-            for (let j = 0; j < 8; j++) {
-                let pixel = document.createElement("div");
-                pixel.className += "pixel";
-                pixel.style.top = `${j * 10 + 2}px`;
-                pixel.style.left = `${i * 10 + 2}px`;
-                if (font[asciiCode][j].charAt(i+1)==="1") {
-                    pixel.style.backgroundColor="red"
-                }
-                letter.appendChild(pixel);
-            }
-        }
-    };
-
-    displayFont(0);
-
-</script>
+<script data-main="app" src="lib/require.js"></script>
 </body>
 </html>
