@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="29351fae-d828-408d-a601-5c15c3a52cb6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +43,18 @@
       <recent name="$PROJECT_DIR$/src/js" />
     </key>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -52,6 +66,7 @@
       <option name="presentableId" value="Default" />
       <updated>1580337245639</updated>
       <workItem from="1580337246975" duration="11973000" />
+      <workItem from="1580393918916" duration="1984000" />
     </task>
     <servers />
   </component>
