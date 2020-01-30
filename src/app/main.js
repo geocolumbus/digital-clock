@@ -1,10 +1,15 @@
 define(function (require) {
-    // Load any app-specific modules
-    // with a relative require call,
-    // like:
-    const letter8x6 = require('./letter8x6');
-    const body = document.getElementsByTagName("body")[0]
-    for (let i=0; i<255; i++) {
-        body.appendChild(letter8x6.displayFont(i))
-    }
-});
+    const letter8x6 = require("./letter8x6")
+    const frame = document.getElementsByClassName("frame")[0]
+    const d = new Date()
+    let hours = d.getHours()
+    let minutes = d.getMinutes()
+    let ampm = hours > 12 ? "pm" : "am"
+    hours = hours > 12 ? hours - 12 : hours
+    mnutes = minutes < 10 ? "0" + minutes : minutes
+    hours = hours < 10 ? " " + hours : hours
+    const time = `${hours}:${minutes}${ampm}`
+    const temp = "32" + String.fromCharCode(248) + "F"
+    frame.appendChild(letter8x6.createWordNode(`  ${time}  `, "lightblue"))
+    frame.appendChild(letter8x6.createWordNode(temp + " Cloudy", "lightblue"))
+})
