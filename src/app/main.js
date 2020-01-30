@@ -12,4 +12,5 @@ define(function (require) {
     const temp = "32" + String.fromCharCode(248) + "F"
     frame.appendChild(letter8x6.createWordNode(`  ${time}  `, "lightblue"))
     frame.appendChild(letter8x6.createWordNode(temp + " Cloudy", "lightblue"))
+
 })
