@@ -6,11 +6,11 @@ define(function (require) {
     let minutes = d.getMinutes()
     let ampm = hours > 12 ? "pm" : "am"
     hours = hours > 12 ? hours - 12 : hours
-    mnutes = minutes < 10 ? "0" + minutes : minutes
+    minutes = minutes < 10 ? "0" + minutes : minutes
     hours = hours < 10 ? " " + hours : hours
     const time = `${hours}:${minutes}${ampm}`
-    const temp = "32" + String.fromCharCode(248) + "F"
+    const temp = "29" + String.fromCharCode(248) + "F"
     frame.appendChild(letter8x6.createWordNode(`  ${time}  `, "lightblue"))
-    frame.appendChild(letter8x6.createWordNode(temp + " Cloudy", "lightblue"))
+    frame.appendChild(letter8x6.createWordNode(temp + "  Clear", "lightblue"))
 
 })
