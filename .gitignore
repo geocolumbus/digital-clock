@@ -1,1 +1,8 @@
+.idea
+*.iml
+
+node_modules
+
 fonts/raster-fonts
+
+dist/main.js

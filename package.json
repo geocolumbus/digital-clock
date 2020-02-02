@@ -1,0 +1,29 @@
+{
+  "name": "digital-clock",
+  "version": "0.0.1",
+  "description": "## Usage",
+  "private": true,
+  "directories": {
+    "src": "src",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node node_modules/.bin/jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geocolumbus/digital-clock.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/geocolumbus/digital-clock/issues"
+  },
+  "homepage": "https://github.com/geocolumbus/digital-clock#readme",
+  "devDependencies": {
+    "jest": "^25.1.0",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {}
+}

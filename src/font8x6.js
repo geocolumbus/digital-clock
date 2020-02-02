@@ -2561,10 +2561,4 @@ _font = [
     ]
 ]
 
-define(function () {
-    return {
-        font: function () {
-            return _font
-        }
-    }
-})
+exports.font = _font
