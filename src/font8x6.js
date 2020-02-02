@@ -2561,4 +2561,8 @@ _font = [
     ]
 ]
 
-exports.font = _font
+const _getFont = function () {
+    return _font
+}
+
+exports.getFont = _getFont

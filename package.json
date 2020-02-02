@@ -8,6 +8,7 @@
     "test": "test"
   },
   "scripts": {
+    "build": "npx webpack --mode=development",
     "test": "node node_modules/.bin/jest"
   },
   "repository": {

@@ -7,7 +7,7 @@ git clone https://github.com/geocolumbus/digital-clock.git
 mkdir fonts ; cd fonts
 git clone https://github.com/idispatch/raster-fonts.git
 npm install
-npx webpack --mode=development
+npm run build
 open dist/index.html
 ```
 
