@@ -2,6 +2,7 @@ const Screen = require("../src/screen.js")
 
 test("Screen defaults to 32 x 16 with all zeros", () => {
     const screen = new Screen.screen()
+    screen.init()
     const expectedRows = 16
     const expectedColumns = 32
 
@@ -26,6 +27,7 @@ test("Screen defaults to 32 x 16 with all zeros", () => {
 
 test("Set and get a screen pixel", ()=>{
     const screen = new Screen.screen()
+    screen.init()
 
     expect(screen.getPixel(5,23)).toEqual(0)
     screen.setPixel(5,23)
