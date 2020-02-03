@@ -1,3 +1,5 @@
+// TODO Initialize the screen to a node!
+
 const _screen = function (_width, _height) {
     return {
         width: _width ? _width : 32,
@@ -49,20 +51,40 @@ const _screen = function (_width, _height) {
         getPixel: function (row, col) {
             return this.grid[row][col]
         },
+        createDOMPixel: function (row, col) {
+            let pixel = document.createElement("div")
+            pixel.className += "pixel"
+            pixel.style.width = "7px"
+            pixel.style.height = "7px"
+            pixel.style.borderRadius = "3.5px"
+            pixel.style.position = "absolute"
+            pixel.style.top = `${j * 10 + 1.5}px`
+            pixel.style.left = `${i * 10 + 1.5}px`
+            pixel.style.backgroundColor = "blue"
+        },
         drawToDom: function () {
+            const domCommands = []
             for (let row = 0; row < this.height; row++) {
                 for (let col = 0; col < this.height; coll++) {
                     if (this.grid[row][col] !== this.buffer[row][col]) {
                         if (this.grid[row][col] === 1) {
-                            // create a pixel and add it to the list
-                            // put a pixel at that point in the array
+                            this.domElements[row][col] = this.createDOMPixel(row, col)
+                            domCommands.push({
+                                action: "add",
+                                node: this.domElements[row][col]
+                            })
                         } else {
-                            // remove the pixel and add a delete to the list
-                            // null that point in the array
+                            domCommands.push({
+                                action: "remove",
+                                node: this.domElements[row][col]
+                            })
+                            this.domElements[row][col] = null
                         }
+                        this.buffer[row][col] = this.grid[row][col]
                     }
                 }
             }
+            return domCommands
         }
     }
 }
