@@ -9,6 +9,7 @@
   },
   "scripts": {
     "build": "npx webpack --mode=development",
+    "buildProd": "npx webpack --mode=production",
     "test": "node node_modules/.bin/jest"
   },
   "repository": {

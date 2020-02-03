@@ -1,13 +1,13 @@
 const Screen = require("./screen")
 const screenNode = document.createElement("div")
 document.getElementsByTagName("body")[0].appendChild(screenNode)
-const width = 32
-const height = 16
+const width = 64
+const height = 32
 const screen = Screen.screen(screenNode, width, height)
 screen.init()
 setInterval(() => {
     screen.drawToDom()
-}, 10)
+}, 30)
 
 let colBar = 0
 setInterval(function () {
@@ -21,7 +21,7 @@ setInterval(function () {
     }
     colBar++
     colBar = colBar > width ? 0 : colBar
-}, 25)
+}, 20)
 
 let rowBar = 0
 setInterval(function () {
@@ -35,5 +35,5 @@ setInterval(function () {
     }
     rowBar++
     rowBar = rowBar > height ? 0 : rowBar
-}, 26)
+}, 30)
 

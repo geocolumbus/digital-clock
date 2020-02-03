@@ -7,7 +7,8 @@ git clone https://github.com/geocolumbus/digital-clock.git
 mkdir fonts ; cd fonts
 git clone https://github.com/idispatch/raster-fonts.git
 npm install
-npm run build
+npm run build         <==  Webpack uncompressed
+npm run buildProd     <==  Webpack compressed
 open dist/index.html
 ```
 

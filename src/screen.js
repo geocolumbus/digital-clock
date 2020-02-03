@@ -1,5 +1,3 @@
-// TODO Initialize the screen to a node!
-
 const _screen = function (_node, _width, _height) {
     return {
         node: _node ? _node : document.createElement("<div>"),
