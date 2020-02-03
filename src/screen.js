@@ -79,10 +79,10 @@ const _screen = function (_node, _width, _height) {
         drawToDom: function () {
             for (let row = 0; row < this.height; row++) {
                 for (let col = 0; col < this.width; col++) {
-                    if (this.grid[row][col] === 1 && !this.domElements[row][col]) {
+                    if (this.grid[row][col] && !this.domElements[row][col]) {
                         this.domElements[row][col] = this.createDOMPixel(row, col)
                         this.node.appendChild(this.domElements[row][col])
-                    } else if (this.grid[row][col] === 0 && this.domElements[row][col]) {
+                    } else if (!this.grid[row][col] && this.domElements[row][col]) {
                         this.domElements[row][col].remove()
                         this.domElements[row][col] = null
                     }
