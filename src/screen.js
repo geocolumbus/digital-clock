@@ -1,5 +1,7 @@
-const font8x6 = require("./font8x6")
-const font = font8x6.getFont()
+const font6x8 = require("./font6x8")
+const font12x16 = require("./font12x16")
+const font1 = font6x8.getFont()
+const font2 = font12x16.getFont()
 
 const _screen = function (_node, _width, _height) {
     return {
@@ -73,23 +75,27 @@ const _screen = function (_node, _width, _height) {
                 return this.grid[row][col]
             }
         },
-        drawLetter: function (letter, letterRow, letterCol, shouldErase) {
+        drawLetter: function (letter, letterRow, letterCol, shouldErase, fontSize) {
+            fontSize = fontSize ? fontSize : 1
+            const font = fontSize === 1 ? font1 : font2
+            const rowSpacer = fontSize === 1 ? 10 : 20
+            const colSpacer = fontSize === 1 ? 6 : 12
             const bitPattern = font[letter.charCodeAt(0)]
-            for (let bitPatternRow = 0; bitPatternRow < 8; bitPatternRow++) {
-                for (let bitPatternCol = 0; bitPatternCol < 6; bitPatternCol++) {
+            for (let bitPatternRow = 0; bitPatternRow < bitPattern.length; bitPatternRow++) {
+                for (let bitPatternCol = 0; bitPatternCol < bitPattern[0].length; bitPatternCol++) {
                     if (bitPattern[bitPatternRow].charAt(bitPatternCol) === "1") {
                         if (shouldErase) {
-                            this.resetPixel(bitPatternRow + letterRow * 10 + 2, bitPatternCol + letterCol * 6)
+                            this.resetPixel(bitPatternRow + letterRow * rowSpacer + 2, bitPatternCol + letterCol * colSpacer)
                         } else {
-                            this.setPixel(bitPatternRow + letterRow * 10 + 2, bitPatternCol + letterCol * 6)
+                            this.setPixel(bitPatternRow + letterRow * rowSpacer + 2, bitPatternCol + letterCol * colSpacer)
                         }
                     }
                 }
             }
         },
-        drawWord: function (word, wordRow, shouldErase) {
+        drawWord: function (word, wordRow, shouldErase, fontSize) {
             for (let c = 0; c < word.length; c++) {
-                this.drawLetter(word.charAt(c), wordRow, c, shouldErase)
+                this.drawLetter(word.charAt(c), wordRow, c, shouldErase, fontSize)
             }
         },
         createDOMPixel: function (row, col) {

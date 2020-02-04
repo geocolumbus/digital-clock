@@ -1,5 +1,5 @@
-const font8x6 = require("./font8x6")
-const font = font8x6.getFont()
+const font6x8 = require("./font6x8)")
+const font = font6x8.getFont()
 
 const _createLetterNode = function (asciiCode, color) {
     const letter = document.createElement("div")

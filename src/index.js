@@ -9,14 +9,4 @@ setInterval(() => {
     screen.drawToDom()
 }, 50)
 
-setTimeout(() => {
-    screen.drawWord("George", 0)
-}, 1000)
-setTimeout(() => {
-    screen.drawWord("George", 0, true)
-    screen.drawWord("Campbell", 0)
-}, 2000)
-setTimeout(() => {
-    screen.drawWord("Campbell", 0, true)
-    screen.drawWord("done", 0)
-}, 3000)
+screen.drawWord("12:34",0.3,false,2)
