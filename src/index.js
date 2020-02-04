@@ -7,33 +7,16 @@ const screen = Screen.screen(screenNode, width, height)
 screen.init()
 setInterval(() => {
     screen.drawToDom()
-}, 30)
+}, 50)
 
-let colBar = 0
-setInterval(function () {
-    for (let row = 0; row < height; row++) {
-        if (colBar > 0) {
-            screen.resetPixel(row, colBar - 1)
-        }
-        if (colBar < width) {
-            screen.setPixel(row, colBar)
-        }
-    }
-    colBar++
-    colBar = colBar > width ? 0 : colBar
-}, 20)
-
-let rowBar = 0
-setInterval(function () {
-    for (let col = 0; col < width; col++) {
-        if (rowBar > 0) {
-            screen.resetPixel(rowBar-1, col)
-        }
-        if (rowBar < height) {
-            screen.setPixel(rowBar, col)
-        }
-    }
-    rowBar++
-    rowBar = rowBar > height ? 0 : rowBar
-}, 30)
-
+setTimeout(() => {
+    screen.drawWord("George", 0)
+}, 1000)
+setTimeout(() => {
+    screen.drawWord("George", 0, true)
+    screen.drawWord("Campbell", 0)
+}, 2000)
+setTimeout(() => {
+    screen.drawWord("Campbell", 0, true)
+    screen.drawWord("done", 0)
+}, 3000)
