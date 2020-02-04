@@ -2,6 +2,7 @@ const font6x8 = require("./font6x8")
 const font12x16 = require("./font12x16")
 const font1 = font6x8.getFont()
 const font2 = font12x16.getFont()
+const color="lightgreen"
 
 const _screen = function (_node, _width, _height) {
     return {
@@ -107,7 +108,7 @@ const _screen = function (_node, _width, _height) {
             pixel.style.position = "absolute"
             pixel.style.top = `${row * 10 + 1.5}px`
             pixel.style.left = `${col * 10 + 1.5}px`
-            pixel.style.backgroundColor = "blue"
+            pixel.style.backgroundColor = color
             return pixel
         },
         drawToDom: function () {
