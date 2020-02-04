@@ -31,5 +31,24 @@ sourceFileLines.forEach(line => {
         lineCounter = lineCounter + 1
     }
 })
-fs.writeFileSync(sink,JSON.stringify(font,null,2))
 
+//fs.writeFileSync(sink,JSON.stringify(font,null,2))
+
+// Create hex file
+
+const fontHex = []
+font.forEach(letter => {
+    let letterBytes=0
+    for (let row = 0; row < letter.length; row++) {
+        let hex = 0
+        for (let col = 0; col < letter[0].length; col++) {
+            let bit = letter[row].charAt(col) === "1" ? 1 : 0
+            hex = hex | bit
+            hex = hex << 1
+        }
+        letterBytes+=hex*(256**row)
+    }
+    fontHex.push(letterBytes)
+})
+
+fs.writeFileSync(sink, JSON.stringify(fontHex))
