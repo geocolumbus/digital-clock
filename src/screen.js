@@ -85,9 +85,9 @@ const _screen = function (_node, _width, _height) {
                 for (let bitPatternCol = 0; bitPatternCol < bitPattern[0].length; bitPatternCol++) {
                     if (bitPattern[bitPatternRow].charAt(bitPatternCol) === "1") {
                         if (shouldErase) {
-                            this.resetPixel(bitPatternRow + letterRow * rowSpacer + 2, bitPatternCol + letterCol * colSpacer)
+                            this.resetPixel(bitPatternRow + letterRow * rowSpacer + 1, bitPatternCol + letterCol * colSpacer)
                         } else {
-                            this.setPixel(bitPatternRow + letterRow * rowSpacer + 2, bitPatternCol + letterCol * colSpacer)
+                            this.setPixel(bitPatternRow + letterRow * rowSpacer + 1, bitPatternCol + letterCol * colSpacer)
                         }
                     }
                 }
