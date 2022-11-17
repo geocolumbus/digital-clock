@@ -4,6 +4,7 @@
 
 ```bash
 git clone https://github.com/geocolumbus/digital-clock.git
+cd digital-clock
 mkdir fonts ; cd fonts
 git clone https://github.com/idispatch/raster-fonts.git
 npm install
